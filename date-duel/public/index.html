@@ -1,0 +1,20 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date Duel</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="app">
+  <section id="home" class="screen active">
+    <div class="hero"><div class="logo">♥ DATE DUEL</div><h1>Свидание, которое превращается в игру.</h1><p>Два браузера. Одна комната. Кубик, собственность, задания, флирт и немного соревновательного хаоса.</p>
+      <input id="name" placeholder="Твоё имя" maxlength="20"><button id="create" class="primary">Создать комнату</button>
+      <div class="join"><input id="codeInput" placeholder="Код комнаты" maxlength="5"><button id="joinBtn">Войти</button></div>
+      <div id="err" class="err"></div>
+    </div>
+  </section>
+  <section id="lobby" class="screen"><div class="panel wide"><div class="logo">♥ DATE DUEL</div><h2>Комната <span id="roomCode"></span></h2><p>Отправь этот код жене. Она откроет эту же страницу и введёт его.</p>
+    <div id="playersLobby" class="players"></div><h3>Настроение вечера</h3><div class="modes"><button data-mode="romantic">💗 Романтика</button><button data-mode="flirty">✨ Флирт</button><button data-mode="after">🔥 После полуночи</button></div>
+    <button id="start" class="primary">Начать игру</button><p class="muted">Начать сможет создатель комнаты, когда подключатся двое.</p></div></section>
+  <section id="game" class="screen"><header><div class="logo">♥ DATE DUEL</div><div>Комната <b id="codeTop"></b></div><div>Глава <b id="chapter"></b>/16</div></header>
+    <main><div class="side"><div id="meCard"></div><div id="otherCard"></div><div class="turnBox" id="turnText"></div><button id="roll" class="primary big">🎲 Бросить кубик</button></div><div id="board" class="board"></div></main>
+    <div id="modal" class="modal hidden"><div class="modalCard"><div id="modalBody"></div></div></div>
+  </section>
+  <section id="end" class="screen"><div class="panel"><div class="logo">♥ DATE DUEL</div><h1>Финал свидания</h1><div id="result"></div><button onclick="location.reload()" class="primary">Сыграть ещё раз</button></div></section>
+</div>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script></body></html>
